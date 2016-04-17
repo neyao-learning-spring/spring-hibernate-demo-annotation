@@ -48,7 +48,7 @@ public class UserDAOImpl implements UserDAO {
 
     @Transactional
     public User find(String userName) {
-        String hql = "from User where username ='" + userName +"'";
+        String hql = "from User where userName ='" + userName +"'";
         Query query = sessionFactory.getCurrentSession().createQuery(hql);
 
         List<User> listUser = (List<User>) query.list();

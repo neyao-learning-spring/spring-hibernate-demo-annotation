@@ -23,7 +23,7 @@ public class User {
 
     @Size(min=3, max=50)
     @Column(name = "username", nullable = false)
-    private String username;
+    private String userName;
 
     @NotNull
     @Column(name = "password")
@@ -31,6 +31,20 @@ public class User {
 
     @Column(name = "email")
     private String email;
+
+    @Column(name = "age")
+    private int age;
+
+    @Override
+    public String toString() {
+        return "User{" +
+                "id=" + id +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                ", email='" + email + '\'' +
+                ", age=" + age +
+                '}';
+    }
 
     public int getId() {
         return id;
@@ -40,12 +54,12 @@ public class User {
         this.id = id;
     }
 
-    public String getUsername() {
-        return username;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUsername(String username) {
-        this.username = username;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
     public String getPassword() {
@@ -64,5 +78,12 @@ public class User {
         this.email = email;
     }
 
+    public int getAge() {
+        return age;
+    }
+
+    public void setAge(int age) {
+        this.age = age;
+    }
 
 }

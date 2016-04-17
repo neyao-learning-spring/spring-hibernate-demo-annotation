@@ -1,5 +1,7 @@
 package org.oursight.learning.hibernate.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import org.hibernate.SessionFactory;
 import org.oursight.learning.hibernate.dao.UserDAO;
 import org.oursight.learning.hibernate.dao.UserDAOImpl;
@@ -19,7 +21,7 @@ import org.springframework.web.servlet.view.JstlView;
  */
 @Configuration
 @EnableWebMvc
-@ComponentScan(basePackages = "org.oursight.learning.hibernate.springmvc")
+@ComponentScan(basePackages = "org.oursight.learning.spring.controller")
 public class AppicationContextConfig {
     @Bean(name = "viewResolver")
     public ViewResolver viewResolver() {
@@ -41,5 +43,11 @@ public class AppicationContextConfig {
     @Bean(name = "userDao")
     public UserDAO getUserDao(SessionFactory sessionFactory) {
         return new UserDAOImpl(sessionFactory);
+    }
+
+    @Bean
+    public ObjectMapper jacksonObjectMapper() {
+        return new ObjectMapper().setPropertyNamingStrategy(
+                PropertyNamingStrategy.CAMEL_CASE_TO_LOWER_CASE_WITH_UNDERSCORES);
     }
 }

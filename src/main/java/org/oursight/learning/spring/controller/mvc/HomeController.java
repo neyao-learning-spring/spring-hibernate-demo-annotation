@@ -1,4 +1,4 @@
-package org.oursight.learning.hibernate.springmvc.controller;
+package org.oursight.learning.spring.controller.mvc;
 
 import org.oursight.learning.hibernate.bo.User;
 import org.oursight.learning.hibernate.dao.UserDAO;

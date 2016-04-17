@@ -23,7 +23,7 @@
         <c:forEach var="user" items="${userList}" varStatus="status">
             <tr>
                 <td>${status.index + 1}</td>
-                <td>${user.username}</td>
+                <td>${user.userName}</td>
                 <td>${user.email}</td>
                 <td>
                     <a href="edit?id=${user.id}">Edit</a>

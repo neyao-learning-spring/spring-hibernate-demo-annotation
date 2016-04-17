@@ -15,7 +15,7 @@
             <form:hidden path="id"/>
             <tr>
                 <td>Username:</td>
-                <td><form:input path="username"/></td>
+                <td><form:input path="userName"/></td>
             </tr>
             <tr>
                 <td>Email:</td>
